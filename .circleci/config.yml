@@ -23,7 +23,7 @@ jobs:
       - run:
           name: Jest
           command: |
-            yarn run jest
+            yarn run test:jest
           environment:
             JEST_JUNIT_OUTPUT_DIR: test-results/jest
             JEST_JUNIT_OUTPUT_FILE: test-results/jest/junit.xml
