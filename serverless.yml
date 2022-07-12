@@ -52,3 +52,6 @@ functions:
       - http:
           path: books/{id}
           method: delete
+custom:
+  serverless-offline:
+    httpPort: 3023

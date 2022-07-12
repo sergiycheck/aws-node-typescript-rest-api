@@ -107,3 +107,17 @@ For your Continuous Integration you can simply do:
 ```bash
 jest --ci --reporters=default --reporters=jest-junit
 ```
+
+List busy ports
+[How to check if port is in use on Linux or Unix](https://www.cyberciti.biz/faq/unix-linux-check-if-port-is-in-use-command/)
+
+```bash
+sudo lsof -i -P -n | grep LISTEN
+```
+
+Kill process
+[How to Find the Process ID of a Program and Kill it [Quick Tip]](https://itsfoss.com/how-to-find-the-process-id-of-a-program-and-kill-it-quick-tip/)
+
+```bash
+sudo kill -9 81730
+```

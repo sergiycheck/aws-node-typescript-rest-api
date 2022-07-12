@@ -17,3 +17,4 @@ out-logger.json
 /**/*.env.dev
 /**/*.env.pro
 /**/*.env.stg
+test-results

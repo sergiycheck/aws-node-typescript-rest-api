@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint \"{app,__tests__}/**/*.ts\" --fix",
-    "local:dev": "rimraf .build && export NODE_ENV=dev && serverless offline",
+    "local:dev": "rimraf .build && export NODE_ENV=dev && serverless offline ",
     "deploy": "serverless deploy",
     "test": "cross-env NODE_ENV=dev mocha -r ts-node/register sinon-tests/**/*.test.ts --exit",
     "coverage": "nyc --reporter lcov npm run test",
