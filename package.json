@@ -11,7 +11,7 @@
     "coverage": "nyc --reporter lcov npm run test",
     "test-jest-envs": "export JEST_JUNIT_OUTPUT_DIR=test-results/jest && export JEST_JUNIT_OUTPUT_FILE=test-results/jest/junit.xml && jest",
     "test:jest": "jest",
-    "test:jest-ci": "jest --ci --reporters=default --reporters=jest-junit"
+    "test:jest-ci": "jest --ci"
   },
   "pre-commit": [
     "lint"

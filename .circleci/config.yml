@@ -25,9 +25,12 @@ jobs:
           command: |
             yarn run test:jest-ci
           environment:
-            JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
+            JEST_JUNIT_OUTPUT_DIR: test-results/jest
+            JEST_JUNIT_OUTPUT_FILE: test-results/jest/junit.xml
       - store_test_results:
-          path: ./reports/junit/
+          path: test-results/jest
+      - store_artifacts:
+          path: test-results/jest
 
 workflows:
   version: 2
