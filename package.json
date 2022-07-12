@@ -10,7 +10,8 @@
     "test": "cross-env NODE_ENV=dev mocha -r ts-node/register sinon-tests/**/*.test.ts --exit",
     "coverage": "nyc --reporter lcov npm run test",
     "test-jest-envs": "export JEST_JUNIT_OUTPUT_DIR=test-results/jest && export JEST_JUNIT_OUTPUT_FILE=test-results/jest/junit.xml && jest",
-    "test:jest": "jest"
+    "test:jest": "jest",
+    "test:jest-ci": "jest --ci --reporters=default --reporters=jest-junit"
   },
   "pre-commit": [
     "lint"

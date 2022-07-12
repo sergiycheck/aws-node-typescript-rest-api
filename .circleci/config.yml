@@ -23,13 +23,11 @@ jobs:
       - run:
           name: Jest
           command: |
-            yarn run test:jest
+            yarn run test:jest-ci
           environment:
-            JEST_JUNIT_OUTPUT_DIR: test-results/jest
-            JEST_JUNIT_OUTPUT_FILE: test-results/jest/junit.xml
-
+            JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
       - store_test_results:
-          path: test-results
+          path: ./reports/junit/
 
 workflows:
   version: 2
