@@ -1,8 +1,11 @@
 service: aws-node-rest-api-typescript
+frameworkVersion: '3'
 
 provider:
   name: aws
   runtime: nodejs16.x
+  region: eu-central-1
+  deploymentMethod: direct
   environment:
     NODE_ENV: dev
 
