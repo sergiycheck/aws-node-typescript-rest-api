@@ -39,19 +39,20 @@ functions:
       - http:
           path: books
           method: get
+    timeout: 10
   findOne:
     handler: app/handler.findOne
     events:
       - http:
           path: books/{id}
           method: get
-
   deleteOne:
     handler: app/handler.deleteOne
     events:
       - http:
           path: books/{id}
           method: delete
+
 custom:
   serverless-offline:
     httpPort: 3023

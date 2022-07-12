@@ -9,6 +9,8 @@ export type Book = {
 
 export type BooksDocument = mongoose.Document & Book;
 
+// const booksSchema: mongoose.Schema<Book, mongoose.Model<Book, any, any>, undefined, {}>
+
 const booksSchema = new mongoose.Schema<Book>({
   name: String,
   id: { type: Number, index: true, unique: true },
