@@ -1,0 +1,38 @@
+version: 2.1
+
+jobs:
+  test:
+    working_directory: ~/nodejs-serverless-jest
+    docker:
+      - image: cimg/node:16.15.0
+    steps:
+      - checkout
+      - restore_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+      - restore_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+      - run: yarn install
+      - save_cache:
+          key: yarn-v1-{{ checksum "yarn.lock" }}-{{ arch }}
+          paths:
+            - ~/.cache/yarn
+      - save_cache:
+          key: node-v1-{{ checksum "package.json" }}-{{ arch }}
+          paths:
+            - node_modules
+      - run:
+          name: Jest
+          command: |
+            yarn run jest
+          environment:
+            JEST_JUNIT_OUTPUT_DIR: 'test-results/jest'
+            JEST_JUNIT_OUTPUT_FILE: 'test-results/jest/junit.xml'
+
+      - store_test_results:
+          path: test-results
+
+workflows:
+  version: 2.1
+  unit-tests:
+    jobs:
+      - test
