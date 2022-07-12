@@ -25,8 +25,8 @@ jobs:
           command: |
             yarn run jest
           environment:
-            JEST_JUNIT_OUTPUT_DIR: 'test-results/jest'
-            JEST_JUNIT_OUTPUT_FILE: 'test-results/jest/junit.xml'
+            JEST_JUNIT_OUTPUT_DIR: test-results/jest
+            JEST_JUNIT_OUTPUT_FILE: test-results/jest/junit.xml
 
       - store_test_results:
           path: test-results
