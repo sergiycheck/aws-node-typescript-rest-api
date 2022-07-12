@@ -39,6 +39,7 @@ functions:
       - http:
           path: books
           method: get
+    timeout: 10
   findOne:
     handler: app/handler.findOne
     events:
