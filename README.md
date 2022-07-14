@@ -121,3 +121,5 @@ Kill process
 ```bash
 sudo kill -9 81730
 ```
+
+### Add network access for mongodb atlas from anywhere
